@@ -6,11 +6,29 @@
  * For permissions, contact 182934048+zhrsh@users.noreply.github.com
  */
 
+:root {
+    --cat-width-multiplier: 35;
+}
+
+/* ===========================
+ * TYPE SELECTORS
+ * =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+ * CLASSES
+ * =========================== */
+
 .pixel-art {
-    image-rendering: crisp-edges;
+    image-rendering: crisp-edges; /* nearest neighbour */
 }
 
 .pixel-art.cat {
-    width: calc(15px * 50);
+    width: calc(15px * var(--cat-width-multiplier));
     height: auto;
 }
