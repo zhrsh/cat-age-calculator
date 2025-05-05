@@ -24,6 +24,13 @@
  * CLASSES
  * =========================== */
 
+.wrapper {
+    display: flex;
+    justify-content: center; /* main axis */
+    align-items: center; /* cross axis */
+    padding: 3vw;
+}
+
 .pixel-art {
     image-rendering: crisp-edges; /* nearest neighbour */
 }
