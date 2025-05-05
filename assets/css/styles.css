@@ -7,7 +7,8 @@
  */
 
 :root {
-    --cat-width-multiplier: 35;
+    --cat-width-multiplier: 25;
+    --general-padding: 30px;
 }
 
 /* ===========================
@@ -38,4 +39,21 @@
 .pixel-art.cat {
     width: calc(15px * var(--cat-width-multiplier));
     height: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* main axis */
+    align-items: center; /* cross axis */
+    padding: 0 var(--general-padding);
+}
+
+main footer {
+    width: 30vw;
+}
+
+footer {
+    padding-top: var(--general-padding);
+    text-align: center;
 }
