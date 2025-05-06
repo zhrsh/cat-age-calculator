@@ -1,6 +1,5 @@
 /* 
- * Copyright (c) 2025. Zahra A. S.
- * All rights reserved. 
+ * Copyright (c) 2025. Zahra A. S., All rights reserved. 
  * This design is the intellectual property of Zahra A. S. 
  * Unauthorized use, reproduction, or distribution of this design is prohibited. 
  * For permissions, contact 182934048+zhrsh@users.noreply.github.com
@@ -21,6 +20,7 @@
     font-style: normal;
 }
 
+/* Silkscreen font import (bold) */
 @font-face { 
     font-family: 'Silkscreen';
     src: url('../fonts/Silkscreen-Bold.woff2') format('woff2');
@@ -36,6 +36,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
 }
 
 body {
@@ -86,10 +90,6 @@ footer {
 }
 
 @media (max-width: 720px) {
-    :root {
-        --cat-width-multiplier: 15
-    }
-
     main footer {
         width: clamp(0px, 90vw, 500px);
     }
@@ -99,15 +99,13 @@ footer {
     }
 
     .pixel-art.cat {
-        padding: var(--general-padding) 0;
+        padding: 5vh 0;
+        width: clamp(15px, 80vw, 150px);
     }
 }
 
 @media (max-width: 300px) {
     :root {
-        --general-padding: 3vw;
-    }
-    .pixel-art.cat {
-        width: clamp(0px, 80vw, calc(var(--cat-width-multiplier) * 15px));
+        --general-padding: 5vw;
     }
 }
