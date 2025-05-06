@@ -13,6 +13,21 @@
     --main-bg: #181615;
 }
 
+/* Silkscreen font import */
+@font-face { 
+    font-family: 'Silkscreen';
+    src: url('../fonts/Silkscreen-Regular.woff2') format('woff2');
+    font-weight: 100 400; /* range of weights */
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: 'Silkscreen';
+    src: url('../fonts/Silkscreen-Bold.woff2') format('woff2');
+    font-weight: 500 800; /* range of weights */
+    font-style: normal;
+}
+
 /* ===========================
  * TYPE SELECTORS
  * =========================== */
@@ -27,6 +42,7 @@ body {
     color: var(--main-fg);
     background-color: var(--main-bg);
     text-align: center;
+    font-family: 'Silkscreen', monospace;
 }
 
 h1 {
