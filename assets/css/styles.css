@@ -57,6 +57,10 @@ h1 {
     padding-bottom: var(--general-padding);
 }
 
+a {
+    color: var(--acc-fg);
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -71,7 +75,7 @@ main footer {
 }
 
 footer {
-    padding-top: var(--general-padding);
+    padding: var(--general-padding) 0;
 }
 
 /* ===========================

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zahra A. S.">
+    <title>Cat Age Calculator Formula</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main class="about">
+        <h1>how the formula was made</h1>
+        <p>According to <a href="https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years">Purina</a>, &ldquo;&hellip;first year of your cat’s life is considered the equivalent of 15 human years. The second year adds nine more human years, so 2 cat years are approximately 24 human years. After this, each additional human year is four “cat years” i.e., age 3 will be 28 human years.&rdquo;</p>
+        <p>So we can deduce that:</p>
+        <ul>
+        <li>1 year old cat = 15 in human years</li>
+        <li>2 year old cat = 24 in human years</li>
+        <li>3 year old cat = <code>24 + 4</code> = <code>28</code></li>
+        <li>4 year old cat = <code>24 + 4 + 4</code> = <code>32</code></li>
+        <li>5 year old cat = <code>24 + 4 + 4 + 4</code> = <code>36</code></li>
+        <li>and so on.</li>
+        </ul>
+        <p>To simplify the addition of 4 in years subsequent 2 years, we can make the following formula. Let&rsquo;s say x is the cat&rsquo;s age:
+        <code>24 + 4 * (x - 2)</code>
+        We subtract x (the cat&rsquo;s age) by 2 because 24 already accounts for the first two years of the cat&rsquo;s age.</p>
+        <p>We can simplify further to:</p>
+        <pre><code>24 + 4 * (x - 2)
+24 + 4x - 8
+16 + 4x</code></pre>
+        <p><code>16 + 4x</code> is the formula I use in the JavaScript</p>
+        <pre class="js"><code><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">catToHumanAge</span>(<span style="color:#a6e22e">catAge</span>) {
+        </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pre</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span style=&#34;color:var(--acc-fg);&#34;&gt;&#39;</span>
+        </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">post</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;/span&gt;&#39;</span>
+        </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 0 &lt;= x &lt; 1
+        </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>) {
+        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">less than 15</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+        </span></span><span style="display:flex;"><span>    } 
+        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">15</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
+        </span></span><span style="display:flex;"><span>    }
+        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">24</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
+        </span></span><span style="display:flex;"><span>    }
+        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>) {
+        
+        <span style="color:#75715e">// 16 + 4x here</span>
+        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}${</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (<span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">catAge</span>)<span style="color:#e6db74">}${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
+        </span></span><span style="display:flex;"><span>    }
+        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;unknown&#34;</span>;
+        </span></span><span style="display:flex;"><span>    }
+        </span></span><span style="display:flex;"><span>}</code></pre>
+        <footer>art and code by zahra.</footer>
+    </main>
+</body>
