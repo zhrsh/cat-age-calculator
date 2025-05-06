@@ -3,22 +3,24 @@ const outputElement = document.getElementById("convertedAge"); // output
 
 function liveInputHandler() {
     const userInput = inputElement.value;
-    outputElement.innerHTML = `<span style="color: #ffff00;">${catToHumanAge(userInput)}</span> years old`;
+    outputElement.innerHTML = catToHumanAge(userInput);
 }
 
 function catToHumanAge(catAge) {
+    pre = '<span style="color:var(--acc-fg);">'
+    post = '</span>'
     // 0 <= x < 1
     if (catAge >= 0 && catAge < 1) {
-        return "less than 15";
+        return `${pre}less than 15${post}`;
     } 
     else if (catAge == 1) {
-        return 15;
+        return `${pre}15${post} years old`;
     }
     else if (catAge == 2) {
-        return 24;
+        return `${pre}24${post} years old`;
     }
     else if (catAge >= 3) {
-        return 16 + (4 * catAge);
+        return `${pre}${16 + (4 * catAge)}${post} years old`;
     }
     else {
         return "unknown";
