@@ -41,3 +41,7 @@ main footer {
     font-size: 1rem;
     text-align: center;
 }
+
+.back-button {
+    padding-bottom: 1em;
+}
