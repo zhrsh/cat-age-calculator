@@ -10,6 +10,7 @@
     --general-padding: 30px;
     --main-fg: #e3e3de;
     --main-bg: #181615;
+    --font-pixel: 'Silkscreen', monospace;
 }
 
 /* Silkscreen font import */
@@ -46,7 +47,7 @@ body {
     color: var(--main-fg);
     background-color: var(--main-bg);
     text-align: center;
-    font-family: 'Silkscreen', monospace;
+    font-family: var(--font-pixel);
 }
 
 h1 {
@@ -63,6 +64,7 @@ main {
 
 main footer {
     width: 30vw;
+    font-size: 0.8rem;
 }
 
 footer {
@@ -72,6 +74,10 @@ footer {
 /* ===========================
  * CLASSES
  * =========================== */
+
+.font-bold {
+    font-weight: 500;
+}
 
 .wrapper {
     display: flex;
@@ -89,6 +95,26 @@ footer {
     height: auto;
 }
 
+.form-element, 
+.form-set {
+    font-size: 1.25rem;
+}
+
+.form-set {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* main axis */
+    align-items: center; /* cross axis */
+    padding-bottom: 1vh;
+}
+
+.form-element {
+    border: none;
+    font-family: var(--font-pixel);
+    width: 3.3em;
+    padding: 1px;
+}
+
 @media (max-width: 720px) {
     main footer {
         width: clamp(0px, 90vw, 500px);
@@ -99,13 +125,26 @@ footer {
     }
 
     .pixel-art.cat {
-        padding: 5vh 0;
-        width: clamp(15px, 80vw, 150px);
+        padding: 3vh 0;
+        width: clamp(15px, 50vw, 150px);
+    }
+
+    .form-set {
+        flex-direction: column;
+        gap: 0.5vh
+    }
+
+    .form-element {
+        width: 10em;
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 420px) {
     :root {
         --general-padding: 5vw;
+    }
+
+    html {
+        font-size: clamp(9px, 5vw, 16px);
     }
 }
