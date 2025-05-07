@@ -5,6 +5,10 @@
  * For permissions, contact 182934048+zhrsh@users.noreply.github.com
  */
 
+body {
+    display: block;
+}
+
 main.about {
     padding: clamp(0px, 5vw, 100px);
     justify-content: flex-start; /* main axis */
@@ -12,7 +16,6 @@ main.about {
     text-align: left;
     width: 100%;
     overflow: hidden;
-    font-size: 1.25rem;
 }
 
 p, ul, pre {
