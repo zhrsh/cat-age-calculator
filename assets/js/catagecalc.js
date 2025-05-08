@@ -26,10 +26,7 @@ function catToHumanAge(catAge) {
     else if (catAge == 1) {
         return `${pre}15${post} years old`;
     }
-    // in between 1 and 2
-    // 15 + (9 * (x - 1))
-    // 15 + 9x - 9
-    // 6 + 9x
+    // 1 < x < 2
     else if (catAge > 1 && catAge < 2) {
         return `around ${pre}${Math.round(6 + 9 * catAge)}${post}`;
     }
